@@ -7,7 +7,7 @@ const LOT_SIZE = 65;
 const INSTRUMENT = "NIFTY 22,850 PE";
 
 // Trade candle indexes are fixed, so the demo is repeatable every day.
-// The execution price is deterministically placed inside each selected candle.
+// The execution price is deterministically placed inside each selected candle body.
 const tradeSeeds = [
   { id: 1, candleIndex: 2, side: "BUY", lots: 1, ratio: 0.35 },
   { id: 2, candleIndex: 6, side: "BUY", lots: 2, ratio: 0.60 },
@@ -22,7 +22,7 @@ function makeTrades(candles) {
   return tradeSeeds.map((seed) => {
     const candle = candles[seed.candleIndex];
     const price = Number(
-      (candle.low + (candle.high - candle.low) * seed.ratio).toFixed(2)
+      (candle.open + (candle.close - candle.open) * seed.ratio).toFixed(2)
     );
     const date = new Date(candle.time * 1000);
     return {
@@ -289,7 +289,7 @@ function App() {
               </button>
               <a
                 className="recent-button prd-toolbar-button"
-                href="https://docs.google.com/document/d/1NyQZ4p3ci2NwaETXecyz6n3gshqxLxVjAleaetRzpMM/edit?usp=sharing"
+                href="ADDLINK"
                 target="_blank"
                 rel="noopener noreferrer"
               >
