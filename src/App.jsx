@@ -289,7 +289,7 @@ function App() {
               </button>
               <a
                 className="recent-button prd-toolbar-button"
-                href="ADDLINK"
+                href="https://docs.google.com/document/d/1NyQZ4p3ci2NwaETXecyz6n3gshqxLxVjAleaetRzpMM/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
               >
